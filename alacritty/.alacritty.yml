@@ -1,0 +1,55 @@
+window:
+  padding:
+    x: 10
+    y: 10
+  opacity: 0.8
+
+shell:
+  program: /bin/zsh
+
+scrolling:
+  history: 10000
+  multiplier: 3
+
+font:
+  size: 13.5
+  normal:
+    family: Fira Code
+
+colors:
+  primary:
+    background: "#1d1f26"
+    foreground: "#a9b1d6"
+    
+  normal:
+    black: "#10100E"
+    gray: "#696969"
+    white: "#C6C6C4"
+    green: "#009F6B"
+    cyan: "#20B2AA"
+    blue: "#0087BD"
+    magenta: "#9A4EAE"
+    pink: "#FF1493"
+    brown: "#CD853F"
+    red: "#C40233"
+    orange: "#EE7F2D"
+    yellow: "#FFD700"
+
+  bright:
+    white: "#FFFAFA"
+    green: "#03C03C"
+    cyan: "#00CCCC"
+    blue: "#007FFF"
+    red: "#FF2400"
+    yellow: "#FDFF00"
+  
+  dark:
+    red: "#800020"
+
+cursor:
+  style:
+    shape: Beam
+    blinking: Always
+    blink-interval: 750
+
+live_config_reload: true

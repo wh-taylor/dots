@@ -1,0 +1,11 @@
+{
+	"messages": [
+		"Python is not installed. Please download and install Python before using the extension.",
+		"No Python interpreter is selected. You need to select a Python interpreter to enable features such as IntelliSense, linting, and debugging."
+	],
+	"keys": [
+		"DiagnosticCodes.NoPythonInterpretersDiagnostic",
+		"DiagnosticCodes.NoCurrentlySelectedPythonInterpreterDiagnostic"
+	],
+	"filePath": "src/client/application/diagnostics/checks/pythonInterpreter"
+}

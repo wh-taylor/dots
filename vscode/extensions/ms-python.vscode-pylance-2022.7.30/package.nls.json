@@ -1,0 +1,9 @@
+{
+    "Common.Yes": "Yes",
+    "Common.No": "No",
+    "Common.remindMeLater": "Remind me later",
+    "Common.reload": "Reload",
+    "LanguageServer.settingsMigratedMessage": "Settings applicable to Microsoft Language Server were copied to Pylance settings. Please check settings.json file(s) for details.",
+    "LanguageServer.settingsMigrationError": "The following settings could not be migrated:",
+    "Insiders.installingPreRelease": "Installing Pylance pre-release build..."
+}
