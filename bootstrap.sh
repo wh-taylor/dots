@@ -13,3 +13,5 @@ ln -sf ~/.dots/zsh/.zshrc ~/.zshrc
 # VSCode
 ln -sf ~/.dots/vscode ~/.vscode
 
+# Backgrounds
+ln -sf ~/.dots/bg ~/Pictures/Backgrounds
