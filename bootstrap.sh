@@ -15,3 +15,6 @@ ln -sf ~/.dots/vscode ~/.vscode
 
 # Backgrounds
 ln -sf ~/.dots/bg ~/Pictures/Backgrounds
+
+# Git
+ln -sf ~/.dots/git/.gitconfig ~/.gitconfig
