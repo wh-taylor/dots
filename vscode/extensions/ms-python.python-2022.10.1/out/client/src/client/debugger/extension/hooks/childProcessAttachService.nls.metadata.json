@@ -1,9 +1,0 @@
-{
-	"messages": [
-		"Failed to launch debugger for child process {0}"
-	],
-	"keys": [
-		"debuggerError"
-	],
-	"filePath": "src/client/debugger/extension/hooks/childProcessAttachService"
-}

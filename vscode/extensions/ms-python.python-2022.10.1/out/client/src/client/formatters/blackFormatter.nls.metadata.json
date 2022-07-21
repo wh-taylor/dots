@@ -1,9 +1,0 @@
-{
-	"messages": [
-		"Black does not support the \"Format Selection\" command"
-	],
-	"keys": [
-		"formatSelectionError"
-	],
-	"filePath": "src/client/formatters/blackFormatter"
-}

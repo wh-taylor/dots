@@ -1,9 +1,0 @@
-{
-	"messages": [
-		"Failed to set interpreter path. Error: {0}"
-	],
-	"keys": [
-		"setInterpreterError"
-	],
-	"filePath": "src/client/interpreter/configuration/pythonPathUpdaterService"
-}

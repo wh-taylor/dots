@@ -1,7 +1,0 @@
-node_modules/
-test-workspace/
-.vscode/
-.vscode-test/
-out/
-dist/
-webpack.config.js

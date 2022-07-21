@@ -1,9 +1,0 @@
-{
-	"messages": [
-		"Please install Python or select a Python Interpreter to use the debugger."
-	],
-	"keys": [
-		"interpreterError"
-	],
-	"filePath": "src/client/debugger/extension/adapter/factory"
-}

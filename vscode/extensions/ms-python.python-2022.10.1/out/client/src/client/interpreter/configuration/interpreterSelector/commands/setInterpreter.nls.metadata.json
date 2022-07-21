@@ -1,9 +1,0 @@
-{
-	"messages": [
-		"Selected Interpreter: {0}"
-	],
-	"keys": [
-		"InterpreterQuickPickList.quickPickListPlaceholder"
-	],
-	"filePath": "src/client/interpreter/configuration/interpreterSelector/commands/setInterpreter"
-}
