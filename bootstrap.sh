@@ -18,3 +18,7 @@ ln -sfT ~/.dots/bg ~/Pictures/Backgrounds
 
 # Git
 ln -sfT ~/.dots/git/dot.gitconfig ~/.gitconfig
+
+# Polybar
+ln -sfT ~/.dots/polybar/config.ini ~/.config/polybar/config.ini
+ln -sfT ~/.dots/polybar/launch.sh ~/.config/polybar/launch.sh
