@@ -189,7 +189,7 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # feh (wallpaper service)
-exec_always --no-startup-id feh --bg-scale ~/Pictures/Backgrounds/Sunset.jpg
+exec_always --no-startup-id feh --bg-scale ~/pictures/bg/Sunset.jpg
 
 # picom (compositor, for transparency)
 exec_always --no-startup-id picom &

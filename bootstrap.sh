@@ -14,7 +14,7 @@ ln -sfT ~/.dots/zsh/.zshrc ~/.zshrc
 ln -sfT ~/.dots/vscode ~/.vscode
 
 # Backgrounds
-ln -sfT ~/.dots/bg ~/Pictures/Backgrounds
+ln -sfT ~/.dots/bg ~/pictures/bg
 
 # Git
 ln -sfT ~/.dots/git/dot.gitconfig ~/.gitconfig
