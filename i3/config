@@ -59,10 +59,10 @@ bindsym $mod+d exec --no-startup-id dmenu_run
 # bindcode $mod+40 exec --no-startup-id i3-dmenu-desktop
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+l focus up
-bindsym $mod+semicolon focus right
+bindsym $mod+h focus left
+bindsym $mod+j focus down
+bindsym $mod+k focus up
+bindsym $mod+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -71,10 +71,10 @@ bindsym $mod+Up focus up
 bindsym $mod+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+semicolon move right
+bindsym $mod+Shift+h move left
+bindsym $mod+Shift+j move down
+bindsym $mod+Shift+k move up
+bindsym $mod+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -83,7 +83,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $mod+g split h
 
 # split in vertical orientation
 bindsym $mod+v split v
@@ -151,6 +151,8 @@ bindsym $mod+Shift+c reload
 bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
+# lock
+bindsym $mod+Shift+a exec lock
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -185,6 +187,11 @@ bindsym $mod+r mode "resize"
 #         status_command i3status
 # }
 
+# set up monitors
+exec_always xrandr --auto
+exec_always xrandr --output DP-2 --right-of DP-0
+exec_always xrandr --output DP-0 --primary --left-of DP-2
+
 # polybar (customizable toolbar)
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
@@ -202,22 +209,24 @@ default_floating_border pixel 1
 # screenshots
 
 # fullscreen screenshot
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date).png"
+bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date).png" -u
 
 # active window screenshot
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).png"
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).png" -u
 
 # selection screenshot
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png"
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png" -u
 
 # fullscreen clipboard screenshot
-bindsym Ctrl+Print exec --no-startup-id maim | xclip -selection clipboard -t image/png
+bindsym Ctrl+Print exec --no-startup-id maim -u | xclip -selection clipboard -t image/png
 
 # active window clipboard screenshot
-bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) | xclip -selection clipboard -t image/png
+bindsym Ctrl+$mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) -u | xclip -selection clipboard -t image/png
 
 # selection clipboard screenshot
-bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection clipboard -t image/png
+bindsym Ctrl+Shift+Print exec --no-startup-id maim --select -u | xclip -selection clipboard -t image/png
+
+bindsym Shift+$mod+s exec --no-startup-id maim --select -u | xclip -selection clipboard -t image/png
 
 # guide
 
@@ -227,3 +236,11 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 # Clipboard Full Screen 	Ctrl + PrtScrn
 # Clipboard Selection 	        Ctrl + Shift + PrtScrn
 # Clipboard Active Window 	Ctrl + Super + PrtScrn
+
+exec setxkbmap -layout 'us,us' --variant ',intl' -option grp:alt_shift_toggle
+
+workspace 1 output DP-0
+workspace 2 output DP-2
+
+# quick-open voxeng
+bindsym Shift+$mod+v exec code ~/code/contribute/voxeng

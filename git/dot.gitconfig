@@ -8,3 +8,5 @@
     clean = git-lfs clean -- %f
 [core]
     editor = nvim
+[init]
+	defaultBranch = main
