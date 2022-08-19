@@ -22,3 +22,6 @@ ln -sfT ~/.dots/git/dot.gitconfig ~/.gitconfig
 # Polybar
 ln -sfT ~/.dots/polybar/config.ini ~/.config/polybar/config.ini
 ln -sfT ~/.dots/polybar/launch.sh ~/.config/polybar/launch.sh
+
+# Neovim
+ln -sfT ~/.dots/nvim ~/.config/nvim
