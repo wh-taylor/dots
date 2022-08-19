@@ -22,7 +22,7 @@ set ttyfast                 " Speed up scrolling in Vim
 " set spell                 " enable spell check (may need to download language package)
 " set noswapfile            " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
-  
+ 
 call plug#begin('~/.vim/plugged')
  " Plugin Section  
  Plug 'shaunsingh/nord.nvim'
@@ -33,7 +33,6 @@ call plug#begin('~/.vim/plugged')
  Plug 'jistr/vim-nerdtree-tabs' 
  Plug 'preservim/nerdcommenter' 
  Plug 'mhinz/vim-startify'
- Plug 'neoclide/coc.nvim', {'branch': 'release'}
  Plug 'kassio/neoterm'
  Plug 'tpope/vim-fugitive'
  Plug 'famiu/nvim-reload'
