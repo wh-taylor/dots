@@ -53,11 +53,7 @@ endif
 syntax enable
 
 " colorscheme evening
-<<<<<<< HEAD
-colorscheme onehalfdark
-=======
 colorscheme base16-default-dark
->>>>>>> 9e941f2 (Update nvim config)
 
 " open new split panes to right and below
 set splitright
