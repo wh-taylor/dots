@@ -1,18 +1,19 @@
+filetype indent plugin off  " disallow auto-indenting depending on file type
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
 set mouse=v                 " middle-click paste with 
 set hlsearch                " highlight search 
 set incsearch               " incremental search
-set tabstop=4               " number of columns occupied by a tab 
-set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
-set expandtab               " converts tabs to white space
+set tabstop=2               " number of columns occupied by a tab 
 set shiftwidth=2            " width for autoindents
+set softtabstop=2           " see multiple spaces as tabstops so <BS> does the right thing
+set expandtab               " converts tabs to white space
 set autoindent              " indent a new line the same amount as the line just typed
-set number                  " add line numbers
+set relativenumber          " add line numbers
+set number
 set wildmode=longest,list   " get bash-like tab completions
-" set cc=80                 " set an 80 column border for good coding style
-filetype plugin indent on   "allow auto-indenting depending on file type
+set cc=100                  " set a 100 column border for good coding style
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
@@ -24,8 +25,9 @@ set ttyfast                 " Speed up scrolling in Vim
 " set backupdir=~/.cache/vim " Directory to store backup files.
  
 call plug#begin('~/.vim/plugged')
- " Plugin Section  
+ " Plugin Section
  Plug 'sonph/onehalf', { 'rtp': 'vim' }
+ Plug 'chriskempson/base16-vim'
  Plug 'ryanoasis/vim-devicons' 
  Plug 'SirVer/ultisnips'  
  Plug 'honza/vim-snippets'  
@@ -51,7 +53,11 @@ endif
 syntax enable
 
 " colorscheme evening
+<<<<<<< HEAD
 colorscheme onehalfdark
+=======
+colorscheme base16-default-dark
+>>>>>>> 9e941f2 (Update nvim config)
 
 " open new split panes to right and below
 set splitright
@@ -86,15 +92,15 @@ map <C-l> <C-w>l
 " map <C-right> <C-w>l
 
 " Move windows
-map <A-j> <C-w>J
-map <A-k> <C-w>K
-map <A-h> <C-w>H
-map <A-l> <C-w>L
-
-map <A-down> <C-w>J
-map <A-up> <C-w>K
-map <A-left> <C-w>H
-map <A-right> <C-w>L
+" map <A-j> <C-w>J
+" map <A-k> <C-w>K
+" map <A-h> <C-w>H
+" map <A-l> <C-w>L
+ 
+" map <A-down> <C-w>J
+" map <A-up> <C-w>K
+" map <A-left> <C-w>H
+" map <A-right> <C-w>L
 
 " move line or visually selected block - alt+j/k
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -108,11 +114,14 @@ vnoremap <A-left> :m '>+1<CR>gv=gv
 vnoremap <A-right> :m '<-2<CR>gv=gv
 
 " Press i to enter insert mode, and ii to exit insert mode.
-:inoremap ii <Esc>
-:inoremap jk <Esc>
-:inoremap kj <Esc>
-:vnoremap jk <Esc>
-:vnoremap kj <Esc>
+inoremap ii <Esc>
+" inoremap jk <Esc>
+" inoremap kj <Esc>
+" vnoremap jk <Esc>
+" vnoremap kj <Esc>
+
+" Live reload
+nnoremap <leader>sv :source $MYVIMRC<CR>
 
 let g:neoterm_default_mod='belowright' " open terminal in bottom split
 let g:neoterm_size=16 " terminal split size
