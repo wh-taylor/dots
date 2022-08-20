@@ -28,9 +28,7 @@ call plug#begin('~/.vim/plugged')
  " Plugin Section
  Plug 'sonph/onehalf', { 'rtp': 'vim' }
  Plug 'chriskempson/base16-vim'
- Plug 'ryanoasis/vim-devicons' 
- Plug 'SirVer/ultisnips'  
- Plug 'honza/vim-snippets'  
+ Plug 'ryanoasis/vim-devicons'  
  Plug 'scrooloose/nerdtree'   
  Plug 'jistr/vim-nerdtree-tabs' 
  Plug 'preservim/nerdcommenter' 
