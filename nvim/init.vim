@@ -25,7 +25,7 @@ set ttyfast                 " Speed up scrolling in Vim
  
 call plug#begin('~/.vim/plugged')
  " Plugin Section  
- Plug 'shaunsingh/nord.nvim'
+ Plug 'sonph/onehalf', { 'rtp': 'vim' }
  Plug 'ryanoasis/vim-devicons' 
  Plug 'SirVer/ultisnips'  
  Plug 'honza/vim-snippets'  
@@ -51,7 +51,7 @@ endif
 syntax enable
 
 " colorscheme evening
-colorscheme nord
+colorscheme onehalfdark
 
 " open new split panes to right and below
 set splitright
