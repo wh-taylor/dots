@@ -1,13 +1,13 @@
-filetype indent plugin off  " disallow auto-indenting depending on file type
+filetype indent plugin on   " disallow auto-indenting depending on file type
 set nocompatible            " disable compatibility to old-time vi
 set showmatch               " show matching 
 set ignorecase              " case insensitive 
 set mouse=v                 " middle-click paste with 
 set hlsearch                " highlight search 
 set incsearch               " incremental search
-set tabstop=2               " number of columns occupied by a tab 
-set shiftwidth=2            " width for autoindents
-set softtabstop=2           " see multiple spaces as tabstops so <BS> does the right thing
+set tabstop=4               " number of columns occupied by a tab 
+set shiftwidth=4            " width for autoindents
+set softtabstop=4           " see multiple spaces as tabstops so <BS> does the right thing
 set expandtab               " converts tabs to white space
 set autoindent              " indent a new line the same amount as the line just typed
 set relativenumber          " add line numbers
@@ -26,22 +26,6 @@ set ttyfast                 " Speed up scrolling in Vim
  
 call plug#begin('~/.vim/plugged')
  " Plugin Section
- Plug 'sonph/onehalf', { 'rtp': 'vim' }
- Plug 'chriskempson/base16-vim'
- Plug 'ryanoasis/vim-devicons'  
- Plug 'scrooloose/nerdtree'   
- Plug 'jistr/vim-nerdtree-tabs' 
- Plug 'preservim/nerdcommenter' 
- Plug 'mhinz/vim-startify'
- Plug 'kassio/neoterm'
- Plug 'tpope/vim-fugitive'
- Plug 'famiu/nvim-reload'
- Plug 'jiangmiao/auto-pairs'
- Plug 'mg979/vim-visual-multi'
- Plug 'mhinz/vim-signify'
- Plug 'neovim/nvim-lspconfig'
- Plug 'mfussenegger/nvim-lint'
- Plug 'lukas-reineke/indent-blankline.nvim'
 call plug#end()
 
 " color schemes
@@ -51,17 +35,17 @@ endif
 syntax enable
 
 " colorscheme evening
-colorscheme base16-default-dark
+"colorscheme base16-default-dark
 
 " open new split panes to right and below
 set splitright
 set splitbelow
 
-let g:nerdtree_tabs_open_on_console_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
 
-autocmd TextChanged,TextChangedI <buffer> silent write
+"autocmd TextChanged,TextChangedI <buffer> silent write
 
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 
 " move line or visually selected block - alt+j/k
 inoremap <A-j> <Esc>:m .+1<CR>==gi
@@ -115,13 +99,13 @@ inoremap ii <Esc>
 " vnoremap kj <Esc>
 
 " Live reload
-nnoremap <leader>sv :source $MYVIMRC<CR>
+"nnoremap <leader>sv :source $MYVIMRC<CR>
 
-let g:neoterm_default_mod='belowright' " open terminal in bottom split
-let g:neoterm_size=16 " terminal split size
-let g:neoterm_autoscroll=1 " scroll to the bottom when running a command
-nnoremap <leader><cr> :TREPLSendLine<cr>j " send current line and move down
-vnoremap <leader><cr> :TREPLSendSelection<cr> " send current selection
+"let g:neoterm_default_mod='belowright' " open terminal in bottom split
+"let g:neoterm_size=16 " terminal split size
+"let g:neoterm_autoscroll=1 " scroll to the bottom when running a command
+"nnoremap <leader><cr> :TREPLSendLine<cr>j " send current line and move down
+"vnoremap <leader><cr> :TREPLSendSelection<cr> " send current selection
 
 tnoremap <Esc> <C-\><C-n><C-W>k
 
