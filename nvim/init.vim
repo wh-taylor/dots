@@ -13,7 +13,7 @@ set autoindent              " indent a new line the same amount as the line just
 set relativenumber          " add line numbers
 set number
 set wildmode=longest,list   " get bash-like tab completions
-set cc=100                  " set a 100 column border for good coding style
+"set cc=100                  " set a 100 column border for good coding style
 syntax on                   " syntax highlighting
 set mouse=a                 " enable mouse click
 set clipboard=unnamedplus   " using system clipboard
@@ -23,10 +23,20 @@ set ttyfast                 " Speed up scrolling in Vim
 " set spell                 " enable spell check (may need to download language package)
 " set noswapfile            " disable creating swap file
 " set backupdir=~/.cache/vim " Directory to store backup files.
- 
+
 call plug#begin('~/.vim/plugged')
  " Plugin Section
+  Plug 'chriskempson/base16-vim'
+  Plug 'xiyaowong/nvim-transparent'
+  Plug 'jiangmiao/auto-pairs'
+  Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
+  Plug 'nvim-tree/nvim-tree.lua'
 call plug#end()
+
+lua require("nvim-tree").setup()
+
+au ColorScheme * hi Normal ctermbg=none guibg=none
+au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
 
 " color schemes
 if (has("termguicolors"))
@@ -35,7 +45,7 @@ endif
 syntax enable
 
 " colorscheme evening
-"colorscheme base16-default-dark
+colorscheme base16-default-dark
 
 " open new split panes to right and below
 set splitright
@@ -108,4 +118,6 @@ inoremap ii <Esc>
 "vnoremap <leader><cr> :TREPLSendSelection<cr> " send current selection
 
 tnoremap <Esc> <C-\><C-n><C-W>k
+
+map t :NvimTreeToggle<CR>
 

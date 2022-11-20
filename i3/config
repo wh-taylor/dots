@@ -196,7 +196,7 @@ exec_always xrandr --output DP-0 --primary --left-of DP-2
 exec_always --no-startup-id ~/.config/polybar/launch.sh
 
 # feh (wallpaper service)
-exec_always --no-startup-id feh --bg-scale ~/pictures/bg/Sunset.jpg
+exec_always --no-startup-id feh --bg-scale ~/media/pictures/bg/Sunset.jpg
 
 # picom (compositor, for transparency)
 exec_always --no-startup-id picom &
@@ -209,13 +209,13 @@ default_floating_border pixel 1
 # screenshots
 
 # fullscreen screenshot
-bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date).png" -u
+bindsym Print exec --no-startup-id maim "/home/$USER/media/pictures/$(date).png" -u
 
 # active window screenshot
-bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/Pictures/$(date).png" -u
+bindsym $mod+Print exec --no-startup-id maim --window $(xdotool getactivewindow) "/home/$USER/media/pictures/$(date).png" -u
 
 # selection screenshot
-bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/Pictures/$(date).png" -u
+bindsym Shift+Print exec --no-startup-id maim --select "/home/$USER/media/pictures/$(date).png" -u
 
 # fullscreen clipboard screenshot
 bindsym Ctrl+Print exec --no-startup-id maim -u | xclip -selection clipboard -t image/png
@@ -237,10 +237,12 @@ bindsym Shift+$mod+s exec --no-startup-id maim --select -u | xclip -selection cl
 # Clipboard Selection 	        Ctrl + Shift + PrtScrn
 # Clipboard Active Window 	Ctrl + Super + PrtScrn
 
-exec setxkbmap -layout 'us,us' --variant ',intl' -option grp:alt_shift_toggle
+exec_always setxkbmap -layout 'kr,us' --variant ',intl' -option grp:alt_shift_toggle
 
 workspace 1 output DP-0
 workspace 2 output DP-2
+
+exec_always xsetwacom --set 18 MapToOutput HEAD-0
 
 # quick-open voxeng
 bindsym Shift+$mod+v exec code ~/code/contribute/voxeng
