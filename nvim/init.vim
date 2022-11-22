@@ -31,9 +31,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'jiangmiao/auto-pairs'
   Plug 'nvim-tree/nvim-web-devicons' " optional, for file icons
   Plug 'nvim-tree/nvim-tree.lua'
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  Plug 'lukas-reineke/indent-blankline.nvim'
+  Plug 'pocco81/auto-save.nvim'
 call plug#end()
 
 lua require("nvim-tree").setup()
+
+lua require("indent_blankline").setup()
 
 au ColorScheme * hi Normal ctermbg=none guibg=none
 au ColorScheme myspecialcolors hi Normal ctermbg=red guibg=red
@@ -50,6 +55,23 @@ colorscheme base16-default-dark
 " open new split panes to right and below
 set splitright
 set splitbelow
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocAction('doHover')
+  endif
+endfunction
 
 "let g:nerdtree_tabs_open_on_console_startup=1
 
